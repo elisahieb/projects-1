@@ -1,3 +1,4 @@
+DROP TABLE posts;
 DROP TABLE users;
 
 CREATE TABLE users (
@@ -13,5 +14,5 @@ CREATE TABLE posts (
     posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
     CONSTRAINT pk_posts PRIMARY KEY (id)
-    CONSTRAINT fk_post_author FOREIGN KEY author REFERENCES users(username)
-)
+    CONSTRAINT fk_post_author FOREIGN KEY (author) REFERENCES users(username)
+);
